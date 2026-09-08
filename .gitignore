@@ -1,3 +1,7 @@
 node_modules/
-dist/
 *.tsbuildinfo
+
+# dist/ IS committed here on purpose: this package is consumed by
+# frontend/backend as a git dependency (github:.../pos-shared), and
+# their build environments may not run the `prepare` lifecycle script
+# (npm's allow-scripts policy can block it), so we ship pre-built.

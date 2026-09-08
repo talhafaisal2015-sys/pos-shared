@@ -1,0 +1,77 @@
+import { z } from 'zod';
+export declare const createSupplierSchema: z.ZodObject<{
+    name: z.ZodString;
+    contactPerson: z.ZodOptional<z.ZodString>;
+    phone: z.ZodOptional<z.ZodString>;
+    email: z.ZodUnion<[z.ZodOptional<z.ZodString>, z.ZodLiteral<"">]>;
+    address: z.ZodOptional<z.ZodString>;
+    ntn: z.ZodOptional<z.ZodString>;
+    cnic: z.ZodOptional<z.ZodString>;
+    bankDetails: z.ZodOptional<z.ZodString>;
+    notes: z.ZodOptional<z.ZodString>;
+    rating: z.ZodOptional<z.ZodNumber>;
+    isActive: z.ZodOptional<z.ZodBoolean>;
+}, "strip", z.ZodTypeAny, {
+    name: string;
+    ntn?: string | undefined;
+    cnic?: string | undefined;
+    email?: string | undefined;
+    phone?: string | undefined;
+    address?: string | undefined;
+    notes?: string | undefined;
+    isActive?: boolean | undefined;
+    contactPerson?: string | undefined;
+    bankDetails?: string | undefined;
+    rating?: number | undefined;
+}, {
+    name: string;
+    ntn?: string | undefined;
+    cnic?: string | undefined;
+    email?: string | undefined;
+    phone?: string | undefined;
+    address?: string | undefined;
+    notes?: string | undefined;
+    isActive?: boolean | undefined;
+    contactPerson?: string | undefined;
+    bankDetails?: string | undefined;
+    rating?: number | undefined;
+}>;
+export type CreateSupplierInput = z.infer<typeof createSupplierSchema>;
+export declare const updateSupplierSchema: z.ZodObject<{
+    name: z.ZodOptional<z.ZodString>;
+    contactPerson: z.ZodOptional<z.ZodOptional<z.ZodString>>;
+    phone: z.ZodOptional<z.ZodOptional<z.ZodString>>;
+    email: z.ZodOptional<z.ZodUnion<[z.ZodOptional<z.ZodString>, z.ZodLiteral<"">]>>;
+    address: z.ZodOptional<z.ZodOptional<z.ZodString>>;
+    ntn: z.ZodOptional<z.ZodOptional<z.ZodString>>;
+    cnic: z.ZodOptional<z.ZodOptional<z.ZodString>>;
+    bankDetails: z.ZodOptional<z.ZodOptional<z.ZodString>>;
+    notes: z.ZodOptional<z.ZodOptional<z.ZodString>>;
+    rating: z.ZodOptional<z.ZodOptional<z.ZodNumber>>;
+    isActive: z.ZodOptional<z.ZodOptional<z.ZodBoolean>>;
+}, "strip", z.ZodTypeAny, {
+    ntn?: string | undefined;
+    cnic?: string | undefined;
+    email?: string | undefined;
+    phone?: string | undefined;
+    name?: string | undefined;
+    address?: string | undefined;
+    notes?: string | undefined;
+    isActive?: boolean | undefined;
+    contactPerson?: string | undefined;
+    bankDetails?: string | undefined;
+    rating?: number | undefined;
+}, {
+    ntn?: string | undefined;
+    cnic?: string | undefined;
+    email?: string | undefined;
+    phone?: string | undefined;
+    name?: string | undefined;
+    address?: string | undefined;
+    notes?: string | undefined;
+    isActive?: boolean | undefined;
+    contactPerson?: string | undefined;
+    bankDetails?: string | undefined;
+    rating?: number | undefined;
+}>;
+export type UpdateSupplierInput = z.infer<typeof updateSupplierSchema>;
